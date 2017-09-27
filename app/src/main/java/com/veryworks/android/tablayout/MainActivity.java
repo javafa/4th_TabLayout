@@ -29,9 +29,14 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(
                 new TabLayout.ViewPagerOnTabSelectedListener(viewPager)
         );
+        // ViewPager의 변경사항을 탭레이아웃에 전달
+        viewPager.addOnPageChangeListener(
+                new TabLayout.TabLayoutOnPageChangeListener(tabLayout)
+        );
     }
 
     private void setTabLayout(){
+        // 탭 레이아웃 생성
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab( tabLayout.newTab().setText("One") );
         tabLayout.addTab( tabLayout.newTab().setText("Two") );
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         data.add(new TwoFragment());
         data.add(new ThreeFragment());
         data.add(new FourFragment());
+
         CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), data);
 
         viewPager.setAdapter(adapter);
