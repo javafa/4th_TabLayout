@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void setViewPager(){
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        List<Fragment> data = new ArrayList<>();
-        data.add(new OneFragment());
-        data.add(new TwoFragment());
-        data.add(new ThreeFragment());
-        data.add(new FourFragment());
-
-        CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), data);
-
+//        List<Fragment> data = new ArrayList<>();
+//        data.add(new OneFragment());
+//        data.add(new TwoFragment());
+//        data.add(new ThreeFragment());
+//        data.add(new FourFragment());
+//
+//        CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), data);
+        CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
     }
 }
